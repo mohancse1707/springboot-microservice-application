@@ -12,6 +12,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -29,16 +30,23 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public ProductDTO getProductByProductId(String productId) {
 		Product productEntity = productRepository.findOneByProductId(productId);
-		// List<ProductReviewDTO> reviewMessage = productReviewServiceProxy.getAllReviewByProductId(productId);
+		List<ProductReviewDTO> reviewDTOList = productReviewServiceProxy.getAllReviewByProductId(productId);
 		ProductDTO productDTO = new ProductDTO();
 		BeanUtils.copyProperties(productEntity, productDTO);
-		if(productEntity != null){
-			log.info("**************");
-			log.info(productEntity.getProductId());
-			log.info(productEntity.getProductTitle());
-			log.info("**************");
-		}
+		productDTO.setReviewList(reviewDTOList);
 		return productDTO;
 	}
 
+	@Override
+	public List<ProductDTO> getAllProduct() {
+		List<Product> productEntity = productRepository.findAll();
+
+		List<ProductDTO> productDTOList = new ArrayList<>();
+		productEntity.stream().forEach(product -> {
+			ProductDTO productDTO = new ProductDTO();
+			BeanUtils.copyProperties(product, productDTO);
+			productDTOList.add(productDTO);
+		});
+		return productDTOList;
+	}
 }
