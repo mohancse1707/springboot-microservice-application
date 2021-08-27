@@ -6,18 +6,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
-@Builder
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter(AccessLevel.PUBLIC)
+@Setter(AccessLevel.PUBLIC)
 @Entity
-@Table(name = "product")
-public class Product {
+@Table(name = "product_review")
+public class ProductReview implements Serializable {
     @Id
     @GeneratedValue
     private Long id;
     private String productId;
-    private String productTitle;
-    private Long price;
+    private Long averageReviewScore;
+    private Long numberOfReview;
 }

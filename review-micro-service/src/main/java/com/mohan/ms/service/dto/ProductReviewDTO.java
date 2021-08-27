@@ -1,6 +1,8 @@
 package com.mohan.ms.service.dto;
 
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 

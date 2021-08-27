@@ -11,7 +11,7 @@ import java.util.List;
 @FeignClient(name="review-micro-service" ) //Service Id of ProductReviewService service
 public interface ProductReviewServiceProxy {
     @RequestMapping("/{product_id}")
-    public List<ProductReviewDTO> findAllReviewByProductId(@PathVariable(value="product_id") Long id);
+    public List<ProductReviewDTO> getAllReviewByProductId(@PathVariable(value="product_id") String productId);
 
     @RequestMapping("/message")
     public String getMessage();
