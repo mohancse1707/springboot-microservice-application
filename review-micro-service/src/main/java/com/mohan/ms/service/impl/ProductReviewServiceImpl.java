@@ -7,6 +7,7 @@ import com.mohan.ms.service.ProductReviewService;
 import com.mohan.ms.service.dto.ProductReviewDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,11 +18,8 @@ import java.util.Optional;
 @Service
 public class ProductReviewServiceImpl implements ProductReviewService {
 
-	private final ProductReviewRepository productReviewRepository;
-
-	public ProductReviewServiceImpl(ProductReviewRepository productRepository) {
-		this.productReviewRepository = productRepository;
-	}
+	@Autowired
+	private ProductReviewRepository productReviewRepository;
 
 	@Override
 	public List<ProductReviewDTO> getAllReviewByProductId(String productId) {

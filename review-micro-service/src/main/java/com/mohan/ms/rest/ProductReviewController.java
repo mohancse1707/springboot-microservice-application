@@ -19,11 +19,6 @@ public class ProductReviewController {
 		this.productReviewService = productReviewService;
 	}
 
-	@GetMapping("/message")
-	public String test() {
-		return "Hello PRODUCT Review";
-	}
-
 	@GetMapping("/{product_id}")
 	public ResponseEntity<List<ProductReviewDTO>> getProductReviewByProductId(@PathVariable(value = "product_id") String productId)  {
 		List<ProductReviewDTO> reviewList = productReviewService.getAllReviewByProductId(productId);
