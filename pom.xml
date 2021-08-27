@@ -12,7 +12,7 @@
         <module>api-gateway-service</module>
         <module>review-micro-service</module>
         <module>product-micro-service</module>
-        <module>service-registry-service</module>
+        <module>eureka-registry-service</module>
         <!-- module -->
     </modules>
 </project>
