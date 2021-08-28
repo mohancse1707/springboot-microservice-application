@@ -1,7 +1,6 @@
 package com.mohan.ms.controller;
 
-
-import com.mohan.ms.ReviewMicroServiceApplication;
+import com.mohan.ms.ProductMicroServiceApplication;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +11,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = ReviewMicroServiceApplication.class)
+@SpringBootTest(classes = ProductMicroServiceApplication.class)
 @WebAppConfiguration
 public abstract class AbstractTest {
    protected MockMvc mvc;
@@ -25,5 +25,4 @@ public abstract class AbstractTest {
    public void setUp() {
       mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
    }
-
 }

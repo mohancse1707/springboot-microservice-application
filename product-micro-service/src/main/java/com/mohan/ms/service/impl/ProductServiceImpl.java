@@ -7,6 +7,7 @@ import com.mohan.ms.service.ProductReviewServiceProxy;
 import com.mohan.ms.service.ProductService;
 import com.mohan.ms.service.dto.ProductDTO;
 import com.mohan.ms.service.dto.ProductReviewDTO;
+import com.netflix.discovery.converters.Auto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +20,11 @@ import java.util.List;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-	private final ProductRepository productRepository;
-	private final ProductReviewServiceProxy productReviewServiceProxy;
+	@Autowired
+	private ProductRepository productRepository;
+	@Autowired
+	private ProductReviewServiceProxy productReviewServiceProxy;
 
-	public ProductServiceImpl(ProductRepository productRepository, ProductReviewServiceProxy productReviewServiceProxy) {
-		this.productRepository = productRepository;
-		this.productReviewServiceProxy = productReviewServiceProxy;
-	}
 
 	@Override
 	public ProductDTO getProductByProductId(String productId) {
