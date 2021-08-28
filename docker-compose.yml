@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  product-service:
+    build:
+      context: ./product-micro-service
+    container_name: product-micro-service
+    expose:
+      - 8081
+    ports:
+    - 8081:8081
+    image: 051216/product-micro-service
+
+  review-service:
+    build:
+      context: ./review-micro-service
+    container_name: review-micro-service
+    expose:
+      - 8083
+    ports:
+      - 8083:8083
+    image: 051216/review-micro-service
