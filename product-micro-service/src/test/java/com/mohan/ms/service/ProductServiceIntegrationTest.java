@@ -36,6 +36,9 @@ public class ProductServiceIntegrationTest {
     @MockBean
     private ProductRepository productRepository;
 
+    @MockBean
+    private ProductReviewServiceProxy productReviewServiceProxy;
+
     @Autowired
     private ProductService productService;
 

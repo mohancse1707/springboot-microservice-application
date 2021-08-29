@@ -1,13 +1,13 @@
 package com.mohan.ms;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class ServiceRegistryServiceApplicationTests {
+//@SpringBootTest
+public class ServiceRegistryServiceApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+//	@Test
+//	void contextLoads() {
+//	}
 
 }

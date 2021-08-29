@@ -2,11 +2,11 @@ package com.mohan.ms;
 
 import org.springframework.boot.test.context.SpringBootTest;
 import org.junit.Test;
-@SpringBootTest
-class ProductMicroServiceApplicationTests {
+//@SpringBootTest
+public class ProductMicroServiceApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+//	@Test
+//	public void contextLoads() {
+//	}
 
 }

@@ -5,8 +5,10 @@ import lombok.*;
 import java.io.Serializable;
 import java.util.List;
 
-@Getter(AccessLevel.PUBLIC)
-@Setter(AccessLevel.PUBLIC)
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ProductDTO implements Serializable{
     private Long id;
     private String productId;
