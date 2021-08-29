@@ -1,7 +1,6 @@
 package com.mohan.ms.controller;
 
 import com.mohan.ms.MapperUtils;
-import com.mohan.ms.domain.Product;
 import com.mohan.ms.service.ProductService;
 import com.mohan.ms.service.dto.ProductDTO;
 import org.junit.Test;

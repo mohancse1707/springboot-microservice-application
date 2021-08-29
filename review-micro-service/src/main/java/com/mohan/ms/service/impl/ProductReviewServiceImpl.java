@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,18 +18,21 @@ import java.util.Optional;
 
 @Slf4j
 @Service
+@Transactional
 public class ProductReviewServiceImpl implements ProductReviewService {
 
 	@Autowired
 	private ProductReviewRepository productReviewRepository;
 
 	@Override
+	@Transactional(propagation = Propagation.SUPPORTS)
 	public List<ProductReviewDTO> getAllReviewByProductId(String productId) {
 		List<ProductReview> reviewList = productReviewRepository.findAllByProductId(productId);
 		return getProductReviewDTOS(reviewList);
 	}
 
 	@Override
+	@Transactional(propagation = Propagation.SUPPORTS)
 	public List<ProductReviewDTO> getAllProductReview() {
 		List<ProductReview> reviewList = productReviewRepository.findAll();
 		return getProductReviewDTOS(reviewList);
@@ -35,6 +40,7 @@ public class ProductReviewServiceImpl implements ProductReviewService {
 
 
 	@Override
+	@Transactional
 	public void addProductReview(ProductReviewDTO reviewDTO) {
 		ProductReview productReview = new ProductReview().builder()
 				.productId(reviewDTO.getProductId())
@@ -45,6 +51,7 @@ public class ProductReviewServiceImpl implements ProductReviewService {
 	}
 
 	@Override
+	@Transactional
 	public void updateProductReview(ProductReviewDTO reviewDTO) {
 
 		Optional<ProductReview> productReview = productReviewRepository.findById(reviewDTO.getId());
@@ -58,6 +65,7 @@ public class ProductReviewServiceImpl implements ProductReviewService {
 	}
 
 	@Override
+	@Transactional
 	public void deleteProductReview(Long id) {
 		productReviewRepository.findById(id).ifPresent(productReview -> {
 			productReviewRepository.delete(productReview);

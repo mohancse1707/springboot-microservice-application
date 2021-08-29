@@ -12,12 +12,15 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
 @Service
+@Transactional
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired
@@ -27,6 +30,7 @@ public class ProductServiceImpl implements ProductService {
 
 
 	@Override
+	@Transactional(propagation = Propagation.SUPPORTS)
 	public ProductDTO getProductByProductId(String productId) {
 		Product productEntity = productRepository.findOneByProductId(productId);
 		List<ProductReviewDTO> reviewDTOList = productReviewServiceProxy.getAllReviewByProductId(productId);
@@ -37,6 +41,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
+	@Transactional(propagation = Propagation.SUPPORTS)
 	public List<ProductDTO> getAllProduct() {
 		List<Product> productEntity = productRepository.findAll();
 
