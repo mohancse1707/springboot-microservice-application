@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "c62d4c85-1751-4511-ad6a-a397249ae013",
+		"name": "Product Review",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Product Review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTYzMDI0MjU5Mn0.8qP9XI0oNgYhtH9o5REOB1EU4LEogVhnDfEM4vPwhYsoRlJ7CIM3zZy5mgDyTvgHh6-RCLvfjhKbBBk9vTTt0g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": \"L0001\",\r\n    \"averageReviewScore\": 3,\r\n    \"numberOfReview\": 23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/review/addProductReview",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"review",
+						"addProductReview"
+					]
+				},
+				"description": "Add Product Review"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product Review By Product Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/review/L0001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"review",
+						"L0001"
+					]
+				},
+				"description": "Get Product Review By Product Id"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Product Review",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/review/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"review",
+						"all"
+					]
+				},
+				"description": "Get All Product Review"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product Review",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTYzMDI0MjU5Mn0.8qP9XI0oNgYhtH9o5REOB1EU4LEogVhnDfEM4vPwhYsoRlJ7CIM3zZy5mgDyTvgHh6-RCLvfjhKbBBk9vTTt0g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"productId\": \"L0001\",\r\n    \"averageReviewScore\": 5,\r\n    \"numberOfReview\": 40\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/review/updateProductReview",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"review",
+						"updateProductReview"
+					]
+				},
+				"description": "Update Product Review"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product Review",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTYzMDI0MjU5Mn0.8qP9XI0oNgYhtH9o5REOB1EU4LEogVhnDfEM4vPwhYsoRlJ7CIM3zZy5mgDyTvgHh6-RCLvfjhKbBBk9vTTt0g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/review/deleteProductReview?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"review",
+						"deleteProductReview"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Delete Product Review"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"user\",\n    \"password\": \"user\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
