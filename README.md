@@ -128,7 +128,7 @@ Access product service datasource in browser
 Datasource URL: [http://localhost:8081/h2](http://localhost:8081/h2)  
 
 To connect product service data source use below credentials   
-JDBC URL  : `jdbc:h2:~/product`  
+JDBC URL  : `jdbc:h2:~/product-3456`  
 User Name : `root`  
 Password  : `root`  
 
@@ -139,7 +139,7 @@ Access product review service datasource in browser
 Datasource URL: [http://localhost:8083/h2](http://localhost:8083/h2)  
 
 To connect product review service data source use below credentials   
-JDBC URL  : `jdbc:h2:~/review`  
+JDBC URL  : `jdbc:h2:~/review-3456`  
 User Name : `root`  
 Password  : `root`  
 
