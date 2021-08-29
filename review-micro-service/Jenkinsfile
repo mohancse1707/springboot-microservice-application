@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    def dockerImage
+    def version = "1.0"
+    def mvnHome = tool 'maven-3.6.3'
+    stage('Prepare') {
+        git url: 'https://github.com/mohancse1707/springboot-microservice-application.git'
+    }
+    stage('Build') {
+        sh "'${mvnHome}/bin/mvn' -f springboot-microservice-application/review-micro-service clean install"
+    }
+
+    stage('Docker Image') {
+        dockerImage = docker.build("review-micro-service:${version}")
+    }
+
+    stage('Docker Deploy') {
+        sh "docker stop review-micro-service:${version}"
+        sh "docker rm review-micro-service:${version}"
+        sh "docker run -d -p 8083:8083 review-micro-service:${version}"
+    }
+}
