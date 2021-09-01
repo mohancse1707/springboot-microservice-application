@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-@EnableFeignClients(basePackages="com.mohan.ms")
+@EnableFeignClients
 public class ProductMicroServiceApplication {
 
 	public static void main(String[] args) {

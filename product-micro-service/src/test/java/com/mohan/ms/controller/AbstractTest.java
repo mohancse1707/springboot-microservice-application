@@ -11,18 +11,18 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = ProductMicroServiceApplication.class)
-@WebAppConfiguration
+//
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@SpringBootTest(classes = ProductMicroServiceApplication.class)
+//@WebAppConfiguration
 public abstract class AbstractTest {
    protected MockMvc mvc;
-
-   @Autowired
-   WebApplicationContext webApplicationContext;
-
-   @Before
-   public void setUp() {
-      mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-   }
+//
+//   @Autowired
+//   WebApplicationContext webApplicationContext;
+//
+//   @Before
+//   public void setUp() {
+//      mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+//   }
 }

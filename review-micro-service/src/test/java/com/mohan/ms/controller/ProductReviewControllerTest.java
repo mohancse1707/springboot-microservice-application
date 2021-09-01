@@ -10,10 +10,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class ProductReviewControllerTest extends AbstractTest {
-    public static final String ADD_PRODUCT_REVIEW_API = "http://localhost:8083/addProductReview";
-    public static final String UPDATE_PRODUCT_REVIEW_API = "http://localhost:8083/updateProductReview";
-    public static final String DELETE_PRODUCT_REVIEW_API = "http://localhost:8083/deleteProductReview?id=1";
-    public static final String ALL_PRODUCT_REVIEW_API = "http://localhost:8083/all";
+    public static final String ADD_PRODUCT_REVIEW_API = "http://localhost:8083/api/addProductReview";
+    public static final String UPDATE_PRODUCT_REVIEW_API = "http://localhost:8083/api/updateProductReview";
+    public static final String DELETE_PRODUCT_REVIEW_API = "http://localhost:8083/api/deleteProductReview?id=1";
+    public static final String ALL_PRODUCT_REVIEW_API = "http://localhost:8083/api/all";
 
     @Test
     public void getAllProductReviewTest() throws Exception {
