@@ -6,6 +6,7 @@ import com.mohan.ms.repository.ProductReviewRepository;
 import com.mohan.ms.service.ProductReviewService;
 import com.mohan.ms.service.dto.ProductReviewDTO;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.LockMode;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,6 +36,7 @@ public class ProductReviewServiceImpl implements ProductReviewService {
 	@Transactional(propagation = Propagation.SUPPORTS)
 	public List<ProductReviewDTO> getAllProductReview() {
 		List<ProductReview> reviewList = productReviewRepository.findAll();
+
 		return getProductReviewDTOS(reviewList);
 	}
 
